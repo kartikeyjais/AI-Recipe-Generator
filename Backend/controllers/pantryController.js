@@ -1,5 +1,5 @@
 
-import PantryItem from "../models/PantryItem"; 
+import PantryItem from "../models/PantryItem.js"; 
 
 // get all pantry items  
 

@@ -1,4 +1,4 @@
-import MealPlan from "../models/MealPlan";
+import MealPlan from "../models/MealPlan.js";
 
 // Add recipe to meal plan
 
@@ -97,3 +97,23 @@ export const deleteMealPlan = async (req , res , next) => {
       }
       
 };
+
+// Get Meal plan stats 
+
+export const getMealPlanStats = async (req , res , next) => {
+    
+    try{
+    
+       const stats = await MealPlan.getStats(req.user.id);
+
+       res.json({
+           success: true,
+           data: { stats }
+       });  
+
+    } catch(error){
+        next(error);    
+    }
+
+  
+}
